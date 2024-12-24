@@ -1,25 +1,18 @@
 <?php 
 
-require_once("");
+require_once("main.php");
 
 class Doctor extends users {
+    public $speciality;
 
-    public $spec;
-
-    public function __construct($spec) {
-        $this->spec = $spec;
-    }
-
-    public function setSpeciality($speciality) {
+    public function __construct($lastName, $firstName, $role, $speciality) {
+        parent::__construct($lastName, $firstName, $role);
         $this->speciality = $speciality;
     }
 
-    public function getSpeciality(){
-        return $this->spec->speciality;
+    public function consult($patient) {
+        return "Dr. " . $this->getname() . " consulte " . $patient->getname();
     }
-
 }
-
-
 
 ?>
